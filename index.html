@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Ciclos, Condicionales y Operadores Lógicos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-grid">
+      <div>
+        <span class="badge">ALGORITMIA FUNDAMENTAL • 20 RETOS</span>
+        <h1>Ciclos, Condicionales &amp; Operadores Lógicos</h1>
+        <p class="subtitle">Simulador interactivo en JavaScript basado en el taller práctico de Google Colab</p>
+      </div>
+      <div class="student-card">
+        <p><strong>Estudiante:</strong> Jhon Estiven Ortiz Martínez</p>
+        <p><strong>Repositorio:</strong> <a href="https://github.com/St7v07/taller-ciclos-condicionales-python" target="_blank" rel="noopener noreferrer">https://github.com/St7v07/taller-ciclos-condicionales-python</a></p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-bar">
+    <div class="container tabs">
+      <button class="tab-btn active" data-target="tab-b1">Bloque 1: Condicionales (01-05)</button>
+      <button class="tab-btn" data-target="tab-b2">Bloque 2: Ciclos for (06-10)</button>
+      <button class="tab-btn" data-target="tab-b3">Bloque 3: Ciclos while (11-15)</button>
+      <button class="tab-btn" data-target="tab-b4">Bloque 4: Integradores (16-20)</button>
+    </div>
+  </nav>
+
+  <main class="container main-content">
+    <!-- BLOQUE 1 -->
+    <section id="tab-b1" class="tab-pane active">
+      <div class="section-title">
+        <h2>Bloque 1: Estructuras Condicionales y Operadores Lógicos</h2>
+        <p>Evaluación de reglas de negocio, desigualdad triangular, seguridad bancaria y discriminantes.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#01</span><h3>Clasificador Tarifario</h3></div>
+          <p class="card-desc">Tarifa base $10.000. Recargo +20% en hora pico y descuento -50% si edad &lt; 12 o &ge; 65.</p>
+          <div class="form-row">
+            <div class="field"><label for="r01-edad">Edad:</label><input type="number" id="r01-edad" value="10"></div>
+            <div class="field"><label for="r01-pico">¿Hora pico?:</label><select id="r01-pico"><option value="false">No</option><option value="true">Sí</option></select></div>
+          </div>
+          <button class="btn-calc" id="btn-r01">Calcular Tarifa</button>
+          <div class="result-box" id="res-r01">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#02</span><h3>Validador de Triángulos</h3></div>
+          <p class="card-desc">Comprueba la desigualdad triangular y clasifica en Equilátero, Isósceles o Escaleno.</p>
+          <div class="form-row">
+            <div class="field"><label for="r02-a">Lado a:</label><input type="number" id="r02-a" value="3"></div>
+            <div class="field"><label for="r02-b">Lado b:</label><input type="number" id="r02-b" value="4"></div>
+            <div class="field"><label for="r02-c">Lado c:</label><input type="number" id="r02-c" value="5"></div>
+          </div>
+          <button class="btn-calc" id="btn-r02">Validar Triángulo</button>
+          <div class="result-box" id="res-r02">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#03</span><h3>Autenticación Multicriterio</h3></div>
+          <p class="card-desc">Valida contraseña, OTP, bloqueo de cuenta y biometría obligatoria para IP extranjera.</p>
+          <div class="form-row">
+            <div class="field"><label for="r03-pwd">Clave OK:</label><select id="r03-pwd"><option value="true">Sí</option><option value="false">No</option></select></div>
+            <div class="field"><label for="r03-otp">OTP OK:</label><select id="r03-otp"><option value="true">Sí</option><option value="false">No</option></select></div>
+            <div class="field"><label for="r03-bloq">Bloqueado:</label><select id="r03-bloq"><option value="false">No</option><option value="true">Sí</option></select></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="r03-ip">IP Extranjera:</label><select id="r03-ip"><option value="false">No</option><option value="true">Sí</option></select></div>
+            <div class="field"><label for="r03-bio">Biometría:</label><select id="r03-bio"><option value="false">No</option><option value="true">Sí</option></select></div>
+          </div>
+          <button class="btn-calc" id="btn-r03">Verificar Acceso</button>
+          <div class="result-box" id="res-r03">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#04</span><h3>Año Bisiesto Gregoriano</h3></div>
+          <p class="card-desc">Divisible por 4, excepto siglos (100), salvo que sean divisibles por 400.</p>
+          <div class="field"><label for="r04-anio">Año:</label><input type="number" id="r04-anio" value="2024"></div>
+          <button class="btn-calc" id="btn-r04">Evaluar Año</button>
+          <div class="result-box" id="res-r04">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#05</span><h3>Clasificador Cuadrático</h3></div>
+          <p class="card-desc">Determina si ax² + bx + c = 0 es lineal o tiene raíces reales, dobles o complejas.</p>
+          <div class="form-row">
+            <div class="field"><label for="r05-a">a:</label><input type="number" id="r05-a" value="1"></div>
+            <div class="field"><label for="r05-b">b:</label><input type="number" id="r05-b" value="-5"></div>
+            <div class="field"><label for="r05-c">c:</label><input type="number" id="r05-c" value="6"></div>
+          </div>
+          <button class="btn-calc" id="btn-r05">Clasificar Ecuación</button>
+          <div class="result-box" id="res-r05">Esperando cálculo...</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOQUE 2 -->
+    <section id="tab-b2" class="tab-pane">
+      <div class="section-title">
+        <h2>Bloque 2: Ciclos for, Acumuladores y Matrices</h2>
+        <p>Diferencia simétrica de múltiplos, descomposición aritmética, Legendre y matrices.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#06</span><h3>Múltiplos Exclusivos (XOR)</h3></div>
+          <p class="card-desc">Suma enteros menores a N divisibles por m1 o m2, pero no por ambos a la vez.</p>
+          <div class="form-row">
+            <div class="field"><label for="r06-n">Límite N:</label><input type="number" id="r06-n" value="16"></div>
+            <div class="field"><label for="r06-m1">m1:</label><input type="number" id="r06-m1" value="3"></div>
+            <div class="field"><label for="r06-m2">m2:</label><input type="number" id="r06-m2" value="5"></div>
+          </div>
+          <button class="btn-calc" id="btn-r06">Calcular Suma</button>
+          <div class="result-box" id="res-r06">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#07</span><h3>Conteo Posicional de Dígito</h3></div>
+          <p class="card-desc">Cuenta cuántas veces aparece el dígito d en todos los números del 1 al N.</p>
+          <div class="form-row">
+            <div class="field"><label for="r07-n">Hasta N:</label><input type="number" id="r07-n" value="30"></div>
+            <div class="field"><label for="r07-d">Dígito d (0-9):</label><input type="number" id="r07-d" value="1"></div>
+          </div>
+          <button class="btn-calc" id="btn-r07">Contar Dígito</button>
+          <div class="result-box" id="res-r07">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#08</span><h3>Factorial y Ceros Finales</h3></div>
+          <p class="card-desc">Calcula n! y los ceros consecutivos al final mediante factores de 5 (Legendre).</p>
+          <div class="field"><label for="r08-n">Entero n:</label><input type="number" id="r08-n" value="10"></div>
+          <button class="btn-calc" id="btn-r08">Calcular Factorial</button>
+          <div class="result-box" id="res-r08">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#09</span><h3>Estadística en Una Pasada</h3></div>
+          <p class="card-desc">Obtiene mínimo, máximo, media aritmética y cantidad de enteros pares.</p>
+          <div class="field"><label for="r09-lista">Números separados por coma:</label><input type="text" id="r09-lista" value="10, 5, 8, 20, 3, 12"></div>
+          <button class="btn-calc" id="btn-r09">Analizar Muestra</button>
+          <div class="result-box" id="res-r09">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#10</span><h3>Matriz de Multiplicar Filtrada</h3></div>
+          <p class="card-desc">Genera tabla N×N reemplazando por 0 los productos múltiplos de k.</p>
+          <div class="form-row">
+            <div class="field"><label for="r10-n">Dimensión N:</label><input type="number" id="r10-n" value="3"></div>
+            <div class="field"><label for="r10-k">Divisor k:</label><input type="number" id="r10-k" value="2"></div>
+          </div>
+          <button class="btn-calc" id="btn-r10">Generar Matriz</button>
+          <div class="result-box" id="res-r10">Esperando cálculo...</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOQUE 3 -->
+    <section id="tab-b3" class="tab-pane">
+      <div class="section-title">
+        <h2>Bloque 3: Ciclos while y Métodos Iterativos</h2>
+        <p>Trayectoria de Collatz, algoritmo de Euclides, palíndromos, raíz babilónica y vida media.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#11</span><h3>Conjetura de Collatz</h3></div>
+          <p class="card-desc">Calcula los pasos para llegar a 1 y el valor máximo alcanzado en la secuencia.</p>
+          <div class="field"><label for="r11-n">Número inicial n:</label><input type="number" id="r11-n" value="6"></div>
+          <button class="btn-calc" id="btn-r11">Simular Collatz</button>
+          <div class="result-box" id="res-r11">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#12</span><h3>MCD y MCM (Euclides)</h3></div>
+          <p class="card-desc">Divisiones sucesivas para Máximo Común Divisor y Mínimo Común Múltiplo.</p>
+          <div class="form-row">
+            <div class="field"><label for="r12-a">Número a:</label><input type="number" id="r12-a" value="48"></div>
+            <div class="field"><label for="r12-b">Número b:</label><input type="number" id="r12-b" value="18"></div>
+          </div>
+          <button class="btn-calc" id="btn-r12">Calcular MCD y MCM</button>
+          <div class="result-box" id="res-r12">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#13</span><h3>Palíndromo Aritmético</h3></div>
+          <p class="card-desc">Invierte el entero con módulo y división entera sin convertir a cadena.</p>
+          <div class="field"><label for="r13-n">Número entero n:</label><input type="number" id="r13-n" value="12321"></div>
+          <button class="btn-calc" id="btn-r13">Verificar Palíndromo</button>
+          <div class="result-box" id="res-r13">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#14</span><h3>Raíz Cuadrada Babilónica</h3></div>
+          <p class="card-desc">Aproxima √S iterando con tolerancia ε = 10⁻⁶ y redondeo a 5 decimales.</p>
+          <div class="field"><label for="r14-s">Valor S:</label><input type="number" step="any" id="r14-s" value="2"></div>
+          <button class="btn-calc" id="btn-r14">Aproximar Raíz</button>
+          <div class="result-box" id="res-r14">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#15</span><h3>Desintegración Radiactiva</h3></div>
+          <p class="card-desc">Períodos de vida media necesarios para que la masa sea menor al umbral límite.</p>
+          <div class="form-row">
+            <div class="field"><label for="r15-ini">Masa inicial (g):</label><input type="number" step="any" id="r15-ini" value="100"></div>
+            <div class="field"><label for="r15-lim">Masa límite (g):</label><input type="number" step="any" id="r15-lim" value="10"></div>
+          </div>
+          <button class="btn-calc" id="btn-r15">Simular Desintegración</button>
+          <div class="result-box" id="res-r15">Esperando cálculo...</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOQUE 4 -->
+    <section id="tab-b4" class="tab-pane">
+      <div class="section-title">
+        <h2>Bloque 4: Algoritmos Integradores y Teoría de Números</h2>
+        <p>Primos hasta √p, ternas pitagóricas, cuadrados mágicos, números felices y primos gemelos.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#16</span><h3>Generador de Primos</h3></div>
+          <p class="card-desc">Lista todos los números primos en el rango [2, N] probando divisores hasta √p.</p>
+          <div class="field"><label for="r16-n">Límite N:</label><input type="number" id="r16-n" value="20"></div>
+          <button class="btn-calc" id="btn-r16">Listar Primos</button>
+          <div class="result-box" id="res-r16">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#17</span><h3>Terna Pitagórica por Suma</h3></div>
+          <p class="card-desc">Encuentra (a, b, c) con a &lt; b &lt; c, a² + b² = c² y a + b + c = S.</p>
+          <div class="field"><label for="r17-s">Suma objetivo S:</label><input type="number" id="r17-s" value="12"></div>
+          <button class="btn-calc" id="btn-r17">Buscar Terna</button>
+          <div class="result-box" id="res-r17">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#18</span><h3>Validador de Cuadrado Mágico</h3></div>
+          <p class="card-desc">Comprueba números únicos de 1 a N² y suma constante en filas, columnas y diagonales.</p>
+          <div class="field">
+            <label for="r18-matriz">Filas (una por línea, valores separados por coma):</label>
+            <textarea id="r18-matriz">8, 1, 6
+3, 5, 7
+4, 9, 2</textarea>
+          </div>
+          <button class="btn-calc" id="btn-r18">Validar Matriz</button>
+          <div class="result-box" id="res-r18">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#19</span><h3>Detector de Números Felices</h3></div>
+          <p class="card-desc">Suma repetidamente el cuadrado de sus dígitos detectando si llega a 1 o entra en ciclo.</p>
+          <div class="field"><label for="r19-n">Entero positivo n:</label><input type="number" id="r19-n" value="19"></div>
+          <button class="btn-calc" id="btn-r19">Evaluar Número</button>
+          <div class="result-box" id="res-r19">Esperando cálculo...</div>
+        </article>
+
+        <article class="card">
+          <div class="card-header"><span class="num-tag">#20</span><h3>Criba de Primos Gemelos</h3></div>
+          <p class="card-desc">Extrae todos los pares de primos (p, q) hasta N que cumplen q - p = 2.</p>
+          <div class="field"><label for="r20-n">Límite N:</label><input type="number" id="r20-n" value="20"></div>
+          <button class="btn-calc" id="btn-r20">Extraer Gemelos</button>
+          <div class="result-box" id="res-r20">Esperando cálculo...</div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
